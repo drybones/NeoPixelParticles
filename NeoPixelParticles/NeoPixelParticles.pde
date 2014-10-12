@@ -57,6 +57,8 @@ void drawHueControl() {
   fill(1,0,1);
   ellipse(width*hueCenter, height*barHeight/2, height*barHeight, height*barHeight);
   rect(width*(hueCenter-hueRange/2), height*barHeight*0.45, width*hueRange, height*barHeight*0.1);
+  rect(width*(hueCenter-hueRange/2), 0, height*barHeight*0.1, height*barHeight);
+  rect(width*(hueCenter+hueRange/2), 0, height*barHeight*0.1, height*barHeight);
 }
 
 
