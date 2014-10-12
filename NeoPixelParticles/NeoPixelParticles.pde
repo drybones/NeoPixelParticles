@@ -14,23 +14,26 @@ void setup() {
  
 void draw() {
   background(0);
-  if(keyPressed)
-  {
-    switch(key) {
-      case 't':
-        ps.Texture = texture;
-        break;
-      case 's':
-        ps.Texture = null;
-        break;
-    }
-  }
+
   ps.HueCenter = mouseX * 1.0 / width;
   if((mouseY * 1.0 / height) > random(1.0))
   {
     ps.addParticle();
   }
   ps.run();
+}
+
+void keyPressed()
+{
+  switch(key) {
+    case 't':
+      ps.Texture = texture;
+      break;
+    case 's':
+      ps.Texture = null;
+      break;
+  }
+  ps.clear();
 }
 
 

@@ -18,6 +18,10 @@ class ParticleSystem {
     particles.add(new Particle(new PVector(width/2.0,height/2.0), thisHue, Texture));
   }
 
+  void clear() {
+    particles.clear();
+  }
+  
   void run() {
     Iterator<Particle> it =
         particles.iterator();
