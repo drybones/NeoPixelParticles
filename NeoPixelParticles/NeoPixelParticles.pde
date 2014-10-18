@@ -5,6 +5,7 @@ float hueCenter = 0.5;
 float hueRange = 0.2;
 float particleIntensity = 0.3;
 float globalBrightness = 1.0;
+boolean produceNewParticles = true;
 
 void setup() {
   size(640,640);
@@ -23,7 +24,7 @@ void draw() {
   drawIntensityControl();
   ps.HueCenter = hueCenter;
   ps.HueRange = hueRange;
-  if(random(1.0) <= particleIntensity)
+  if(random(1.0) <= particleIntensity && produceNewParticles)
   {
     ps.addParticle();
   }
@@ -34,12 +35,16 @@ void keyPressed() {
   switch(key) {
     case 't':
       ps.Texture = texture;
+      ps.clear();
       break;
     case 's':
       ps.Texture = null;
+      ps.clear();
+      break;
+    case ' ':
+      produceNewParticles = !produceNewParticles;
       break;
   }
-  ps.clear();
 }
 
 void mouseDragged() {
